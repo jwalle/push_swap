@@ -28,10 +28,11 @@ void	ft_ss(t_llist *a, t_llist *b)
 	ft_s(b);
 }
 
-
+/*
 void	ft_pa(t_llist *a, t_llist *b)
 {
-	
+
 }
 
 void	ft_pb(t_llist *a, t_llist *b)
+*/
