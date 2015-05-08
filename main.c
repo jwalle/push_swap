@@ -26,13 +26,52 @@ void print_list(t_llist *head)
 }
 
 
-void push_swap(t_llist *head, t_env *e)
+void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 {
+	int chaos;	
+	
+	sorted = ft_sort(&sorted);
+	print_list(head);
+	ft_s(head);
+	printf("sa.\n");
+	print_list(head);
+
 	if (e->i == 0)
 		printf("plop\n");
-	print_list(head);
+	print_list(sorted);
+	chaos = ft_chaos(head, sorted, e);
+	printf("chaos = %d\n", chaos);
 }
 
+int	ft_chaos(t_llist *head, t_llist *sorted, t_env *e)
+{
+	t_llist *current_head;
+	t_llist *current_sorted;
+	int i;
+	int j;
+	int k;
+
+	j = 0;
+	k = 0;
+	if (e->i == 0)
+		printf("plop\n");
+
+	current_head = head;
+	while(current_head)
+	{
+		current_sorted = sorted;
+		i = 0;
+		k++;
+		while (current_head->number != current_sorted->number)
+		{
+			current_sorted = current_sorted->next;
+			i++;
+		}
+		j += i;
+		current_head = current_head->next;
+	}
+	return (j);
+}
 
 void ft_init_e(t_env *e)
 {
@@ -43,6 +82,7 @@ int     main(int ac, char **av)
 {
 	t_env *e;
 	t_llist *head;
+	t_llist *sorted;
 	
 	if ((e = (t_env*)malloc(sizeof(t_env))) == NULL)
 		return (0);
@@ -50,7 +90,9 @@ int     main(int ac, char **av)
 	{
 		ft_init_e(e);
 		head = ll_stock(av + 1);
-		push_swap(head, e);
+		sorted = ll_stock(av + 1);
+
+		push_swap(head,sorted, e);
 	}
     return 0;
 }

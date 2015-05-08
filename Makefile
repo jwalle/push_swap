@@ -2,6 +2,8 @@ NAME = push_swap
 
 SRC = 	main.c \
 		stock.c \
+		sort.c \
+		swap_one.c \
 
 OBJ			=	$(SRC:.c=.o)
 
