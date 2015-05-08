@@ -16,11 +16,21 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "libft.h"
+#include "libft/includes/libft.h"
 
 typedef struct	s_env
 {
 	int			i;
 }				t_env;
+
+typedef struct	s_llist
+{
+	int			number;
+	void		*next;
+}				t_llist;
+
+t_llist	*ll_copy_new(t_llist *head, char *av);
+t_llist	*ll_copy_cur(t_llist *cur, char *av);
+t_llist	*ll_stock(char **av);
 
 #endif
