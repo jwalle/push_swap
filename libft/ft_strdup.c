@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/07 10:53:21 by jwalle            #+#    #+#             */
+/*   Updated: 2014/11/26 16:42:04 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-void ft_init_e(t_env *e)
+char	*ft_strdup(const char *s1)
 {
-	e->i = 0;
-}
+	int		i;
+	char	*dest;
+	size_t	len;
 
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
+	i = 0;
+	len = ft_strlen(s1);
+	if (!s1)
+		return (NULL);
+	dest = (char *)malloc(sizeof(char *) * len);
+	if (dest == NULL)
+		return (dest);
+	while (s1[i] != '\0')
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/09 12:13:35 by jwalle            #+#    #+#             */
+/*   Updated: 2014/11/21 16:06:36 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-void ft_init_e(t_env *e)
+void	ft_memdel(void **ap)
 {
-	e->i = 0;
-}
-
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
+	if (!ap)
+		return ;
+	free(*ap);
+	*ap = NULL;
 }

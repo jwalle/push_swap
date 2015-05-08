@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/06 12:07:09 by jwalle            #+#    #+#             */
+/*   Updated: 2014/11/21 15:47:25 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-void ft_init_e(t_env *e)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	e->i = 0;
-}
+	char		*tmp;
+	const char	*tmp2;
 
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
+	if (dst == NULL || src == NULL || n == 0)
+		return (NULL);
+	tmp = dst;
+	tmp2 = src;
+	if (dst <= src)
+		return (ft_memcpy(dst, src, n));
+	tmp += n;
+	tmp2 += n;
+	while (n--)
+		*--tmp = *--tmp2;
+	return (dst);
 }

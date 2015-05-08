@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/09 11:42:33 by jwalle            #+#    #+#             */
+/*   Updated: 2014/11/20 15:21:43 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-void ft_init_e(t_env *e)
+char	*ft_strnew(size_t size)
 {
-	e->i = 0;
-}
+	size_t	i;
+	char	*new;
 
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
+	i = -1;
+	new = (char*)malloc(size + 1);
+	if (!new)
+		return (NULL);
+	while (++i <= size + 1)
+		new[i] = '\0';
+	return (new);
 }

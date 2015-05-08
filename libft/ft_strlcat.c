@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/05 16:54:56 by jwalle            #+#    #+#             */
+/*   Updated: 2014/11/11 14:19:21 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-void ft_init_e(t_env *e)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	e->i = 0;
-}
+	int				i;
+	unsigned int	lensrc;
+	unsigned int	lendest;
 
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
+	i = 0;
+	lendest = ft_strlen(dest);
+	lensrc = ft_strlen(src);
+	if (size <= lendest)
+		return (lensrc + size);
+	while (lendest + i < size - 1)
+	{
+		dest[lendest + i] = src[i];
+		i++;
+	}
+	dest[lendest + i] = '\0';
+	return (lendest + lensrc);
 }

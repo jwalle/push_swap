@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/16 18:06:37 by jwalle            #+#    #+#             */
+/*   Updated: 2015/05/02 11:59:41 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 4
+
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "libft.h"
 
 
-void ft_init_e(t_env *e)
+typedef struct	s_static
 {
-	e->i = 0;
-}
+	char		*buf;
+	int			i;
+	int			size;
+	int			cpy;
+}				t_static;
 
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
-}
+int				get_next_line(int const fd, char **line);
+
+#endif

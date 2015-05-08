@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/06 11:49:36 by jwalle            #+#    #+#             */
+/*   Updated: 2014/11/08 19:12:49 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-void ft_init_e(t_env *e)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	e->i = 0;
-}
+	char		*tmp;
+	const char	*tmp2;
 
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
+	tmp = dst;
+	tmp2 = src;
+	while (n--)
+	{
+		if (*tmp2 == c)
+		{
+			*tmp++ = *tmp2++;
+			return (tmp);
+		}
+		*tmp++ = *tmp2++;
+	}
+	return (NULL);
 }

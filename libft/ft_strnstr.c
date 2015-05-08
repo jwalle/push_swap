@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 15:06:46 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/08 15:08:40 by jwalle           ###   ########.fr       */
+/*   Created: 2014/11/08 18:39:32 by jwalle            #+#    #+#             */
+/*   Updated: 2014/11/08 19:39:01 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-
-void ft_init_e(t_env *e)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	e->i = 0;
-}
+	unsigned int	i;
 
-int     main()
-{
-	t_env *e;
-	
-	if (e = malloc(t_env*)malloc(sizeof(t_env)) == NULL)
-		return(NULL);
-	ft_init_e(e);
-    return 0;
+	if (!*s2)
+		return ((char*)s1);
+	i = ft_strlen(s2);
+	while (*s1 != '\0' && n >= i)
+	{
+		if (*s1 == *s2 && ft_memcmp(s1, s2, i) == 0)
+			return ((char*)s1);
+		s1++;
+		n--;
+	}
+	return (NULL);
 }
