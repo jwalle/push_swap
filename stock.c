@@ -34,6 +34,7 @@ t_llist	*ll_stock(char **av)
 		}
 		av++;
 	}
+	current->end = 1;
 	return (head);
 }
 

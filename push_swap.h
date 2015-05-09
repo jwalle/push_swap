@@ -26,6 +26,7 @@ typedef struct	s_env
 typedef struct		s_llist
 {
 	int				number;
+	int				end;
 	struct s_llist	*next;
 	struct s_llist	*prev;
 }					t_llist;
@@ -41,7 +42,8 @@ void	split(t_llist *source, t_llist **front, t_llist **back);
 void	push_swap(t_llist *head, t_llist *sorted, t_env *e);
 t_llist *ft_sort(t_llist **head);
 int		ft_chaos(t_llist *head, t_llist *sorted, t_env *e);
-void	ft_s(t_llist *current);
+void	ft_sa(t_llist *current);
+void	ft_sb(t_llist *current);
 void	ft_ss(t_llist *a, t_llist *b);
 
 #endif

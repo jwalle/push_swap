@@ -18,11 +18,19 @@ void print_list(t_llist *head)
 	t_llist *current;
 
 	current = head;
-	while (current)
+	printf("list a =");
+	while (current->end == 0)
 	{
-		printf("%d\n", current->number);
+		printf("%d ", current->number);
 		current = current->next;
 	}
+	printf("\nlist b =");
+	while (current)
+	{
+		printf("%d ", current->number);
+		current = current->next;
+	}
+	printf("\nfin.\n");
 }
 
 
@@ -31,14 +39,14 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	int chaos;	
 	
 	sorted = ft_sort(&sorted);
-	print_list(head);
-	//ft_s(head);
-	//printf("sa.\n");
 	//print_list(head);
+	//ft_sa(head);
+	printf("sa.\n");
+	print_list(head);
 
-	if (e->i == 0)
-		printf("plop\n");
-	print_list(sorted);
+	//if (e->i == 0)
+	//	printf("plop\n");
+	//print_list(sorted);
 	chaos = ft_chaos(head, sorted, e);
 	printf("chaos = %d\n", chaos);
 }
