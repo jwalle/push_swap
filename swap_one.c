@@ -60,7 +60,7 @@ void	ft_pb(t_llist *current)
 	if (swap->prev == NULL)
 		return ;
 	swap->end = 0;
-	swap->prev->end = 1;
+	swap->start = 1;
 }
 
 void	ft_pa(t_llist *current)

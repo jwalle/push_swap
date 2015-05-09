@@ -27,6 +27,7 @@ typedef struct		s_llist
 {
 	int				number;
 	int				end;
+	int				start;
 	struct s_llist	*next;
 	struct s_llist	*prev;
 }					t_llist;
@@ -45,5 +46,7 @@ int		ft_chaos(t_llist *head, t_llist *sorted, t_env *e);
 void	ft_sa(t_llist *current);
 void	ft_sb(t_llist *current);
 void	ft_ss(t_llist *a, t_llist *b);
+void	ft_pb(t_llist *current);
+void	ft_pa(t_llist *current);
 
 #endif

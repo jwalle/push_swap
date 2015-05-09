@@ -18,9 +18,9 @@ RM			=	/bin/rm -v
 all			:	$(NAME)
 
 $(NAME)		:
-	make -C ./libft
+	#make -C ./libft
 	$(CC) $(CFLAGS) $(SRC) $(LINK) $(INC) -o $(NAME)
-	make -C ./libft clean
+	#make -C ./libft clean
 	rm -rf $(OBJ)
 
 

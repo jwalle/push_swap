@@ -18,21 +18,24 @@ void print_list(t_llist *head)
 	t_llist *current;
 
 	current = head;
-	printf("list a =");
-	while (current->end == 0)
-	{
-		printf("%d ", current->number);
-		current = current->next;
-	}
-	printf("\nlist b =");
-	while (current)
-	{
-		printf("%d ", current->number);
-		current = current->next;
-	}
-	printf("\nfin.\n");
-}
 
+	printf("\x1b[33mlist a : \x1b[0m");
+	while (current->start != 1 && current)
+	{
+		printf("%d ", current->number);
+		current = current->next;
+	}
+	current = head;
+	while (current->next)
+		current = current->next;
+	printf("\n\x1b[31mlist b : \x1b[0m");
+	while (current->start != 1)
+	{
+		printf("%d ", current->number);
+		current = current->prev;
+	}
+	printf("\n\n");
+}
 
 void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 {
@@ -41,8 +44,19 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	sorted = ft_sort(&sorted);
 	//print_list(head);
 	//ft_sa(head);
-	printf("sa.\n");
+	//printf("sa.\n");
+	//print_list(head);
+	ft_pb(head);
 	print_list(head);
+	ft_pb(head);
+	print_list(head);
+	//ft_pb(head);
+	//print_list(head);
+	/*ft_pb(head);
+	print_list(head);*/
+	//print_list(head);
+	//print_list(head);
+
 
 	//if (e->i == 0)
 	//	printf("plop\n");
@@ -71,7 +85,7 @@ int     main(int ac, char **av)
 		ft_init_e(e);
 		head = ll_stock(av + 1);
 		sorted = ll_stock(av + 1);
-
+		printf("plop\n");
 		push_swap(head,sorted, e);
 	}
     return 0;
