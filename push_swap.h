@@ -27,6 +27,7 @@ typedef struct		s_llist
 {
 	int				number;
 	struct s_llist	*next;
+	struct s_llist	*prev;
 }					t_llist;
 
 

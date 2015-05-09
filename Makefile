@@ -4,6 +4,7 @@ SRC = 	main.c \
 		stock.c \
 		sort.c \
 		swap_one.c \
+		ft_chaos.c \
 
 OBJ			=	$(SRC:.c=.o)
 
@@ -24,7 +25,7 @@ $(NAME)		:
 
 
 fclean		:	clean
-	make -C ./libft fclean
+	#make -C ./libft fclean
 	rm -rf $(NAME)
 
 re			:	fclean all

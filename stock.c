@@ -45,16 +45,20 @@ t_llist	*ll_copy_new(t_llist *head, char *av)
 	new->next = head;
 	head = new;
 	new->number = ft_atoi(av);
+	new->prev = NULL;
 	return (new);
 }
 
 t_llist	*ll_copy_cur(t_llist *cur, char *av)
 {
 	t_llist *new;
+	t_llist *temp;
 
+	temp = cur;
 	new = (t_llist*)malloc(sizeof(t_llist));
 	cur->next = new;
 	new->next = NULL;
+	new->prev = temp;
 	new->number = ft_atoi(av);
 	return (new);
 }

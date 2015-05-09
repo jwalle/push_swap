@@ -47,12 +47,16 @@ t_llist	*merge(t_llist *a, t_llist *b)
 	if (a->number > b->number)
 	{
 		result = a;
-		result->next = merge(a->next, b);
+		result->next = merge(result->next, b);
+		result->next->prev = result;
+		result->prev = NULL;
 	}
 	else
 	{
 		result = b;
-		result->next = merge(a, b->next);
+		result->next = merge(a, result->next);
+		result->next->prev = result;
+		result->prev = NULL;
 	}
 	return (result);
 }
