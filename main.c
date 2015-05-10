@@ -58,17 +58,17 @@ void print_list(t_llist *head)
 	t_llist *current;
 
 	current = head;
-/*
+
 	while (current)
 	{
 		printf("number = %d, start = %d, end = %d\n", current->number, current->start, current->end);
 		current = current->next;
 	}
-	printf("\n");*/
+	printf("\n");/*
 	print_a(current);
 	printf("\n");
 	print_b(current);
-	printf("\n\n");
+	printf("\n\n");*/
 }
 
 void push_swap(t_llist *head, t_llist *sorted, t_env *e)
@@ -80,13 +80,15 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	//ft_sa(head);
 	//printf("sa.\n");
 	print_list(head);
-	ft_ra(head);
-	print_list(head);
-	ft_ra(head);
-	print_list(head);
-	/*ft_pb(head);
-	print_list(head);
 	ft_pb(head);
+	//print_list(head);
+	ft_pb(head);
+	//print_list(head);
+	ft_pb(head);
+	print_list(head);
+	//ft_rb(head);
+	//print_list(head);
+	/*ft_pb(head);
 	print_list(head);
 	ft_pb(head);
 	print_list(head);

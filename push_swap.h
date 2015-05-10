@@ -49,6 +49,8 @@ void	ft_ss(t_llist *a);
 void	ft_pb(t_llist *current);
 void	ft_pa(t_llist *current);
 void	ft_ra(t_llist *current);
+void	ft_rb(t_llist *current);
+
 
 
 #endif

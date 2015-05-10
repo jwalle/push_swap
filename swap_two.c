@@ -18,6 +18,20 @@ int 	ft_a_empty(t_llist *head)
 	return (0);
 }
 
+int		ft_b_empty(t_llist *head)
+{
+	t_llist *current;
+
+	current = head;
+	while (current)
+	{
+		if (current->start && current->end)
+			return (1);
+		current = current->next;
+	}
+	return (0);
+}
+
 void	ft_ll_swap(t_llist *one, t_llist *two)
 {
 	int temp;
@@ -59,3 +73,27 @@ void	ft_ra(t_llist *head)
 	}
 }
 
+void 	ft_rb(t_llist *head)
+{
+	t_llist *current;
+	int		temp;
+
+	current = head;
+	if (ft_b_empty(current))
+		return ;
+	while (current->next)
+		current = current->next;
+	temp = current->next->number;
+	current = current->next;
+	while (current->prev)
+	{
+		ft_ll_swap(current, current->prev);
+		if (current->prev->start)
+		{
+			current->prev->number = temp;
+			break;
+		}
+		current = current->prev;
+	}
+
+}
