@@ -52,7 +52,18 @@ void	ft_ss(t_llist *a, t_llist *b)
 void	ft_pb(t_llist *current)
 {
 	t_llist *swap;
+	int		i;
 
+	i = 0;
+	swap = current;
+	while (swap)
+	{
+		i += swap->end;
+		swap = swap->next;
+	}
+	swap = current;
+	if (!i)
+		return;
 	swap = current;
 	while (swap && !swap->end)
 		swap = swap->next;
@@ -66,8 +77,21 @@ void	ft_pb(t_llist *current)
 void	ft_pa(t_llist *current)
 {
 	t_llist *swap;
+	int		i;
 
+	i = 0;
 	swap = current;
+	while (swap)
+	{
+		i += swap->end;
+		swap = swap->next;
+	}
+	swap = current;
+	if (!i)
+	{
+		swap->end = 1;
+		return;
+	}
 	while (swap->end != 1)
 		swap = swap->next;
 	if (swap->next == NULL)

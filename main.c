@@ -88,6 +88,18 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	print_list(head);
 	ft_pb(head);
 	print_list(head);
+	ft_pb(head);
+	print_list(head);
+	ft_pa(head);
+	print_list(head);	
+	ft_pa(head);
+	print_list(head);	
+	ft_pa(head);
+	print_list(head);	
+	ft_pa(head);
+	print_list(head);
+	ft_pa(head);
+	print_list(head);
 	//print_list(head);
 	//print_list(head);
 
