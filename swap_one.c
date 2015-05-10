@@ -39,14 +39,12 @@ void	ft_sb(t_llist *current)
 	swap->next->number = temp;
 }
 
-void	ft_ss(t_llist *a, t_llist *b)
+void	ft_ss(t_llist *a)
 {
-	if (!a || !b)
-		return ;
-	if (!a->next || !b->next)
+	if (!a)
 		return ;
 	ft_sa(a);
-	ft_sb(b);
+	ft_sb(a);
 }
 
 void	ft_pb(t_llist *current)
@@ -99,7 +97,3 @@ void	ft_pa(t_llist *current)
 	swap->end = 0;
 	swap->next->end = 1;
 }
-
-/*
-void	ft_pb(t_llist *a, t_llist *b)
-*/

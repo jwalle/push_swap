@@ -45,8 +45,10 @@ t_llist *ft_sort(t_llist **head);
 int		ft_chaos(t_llist *head, t_llist *sorted, t_env *e);
 void	ft_sa(t_llist *current);
 void	ft_sb(t_llist *current);
-void	ft_ss(t_llist *a, t_llist *b);
+void	ft_ss(t_llist *a);
 void	ft_pb(t_llist *current);
 void	ft_pa(t_llist *current);
+void	ft_ra(t_llist *current);
+
 
 #endif

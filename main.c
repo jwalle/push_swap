@@ -80,11 +80,11 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	//ft_sa(head);
 	//printf("sa.\n");
 	print_list(head);
-	ft_pb(head);
+	ft_ra(head);
 	print_list(head);
-	ft_pb(head);
+	ft_ra(head);
 	print_list(head);
-	ft_pb(head);
+	/*ft_pb(head);
 	print_list(head);
 	ft_pb(head);
 	print_list(head);
@@ -94,12 +94,12 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	print_list(head);	
 	ft_pa(head);
 	print_list(head);	
-	ft_pa(head);
+	ft_sa(head);
 	print_list(head);	
-	ft_pa(head);
+	ft_sb(head);
 	print_list(head);
-	ft_pa(head);
-	print_list(head);
+	ft_ss(head);
+	print_list(head);*/
 	//print_list(head);
 	//print_list(head);
 
