@@ -35,6 +35,7 @@ t_llist	*ll_stock(char **av)
 		av++;
 	}
 	current->end = 1;
+	current->start = 1;
 	return (head);
 }
 
@@ -46,9 +47,9 @@ t_llist	*ll_copy_new(t_llist *head, char *av)
 	new->next = head;
 	head = new;
 	new->number = ft_atoi(av);
-	/*new->start = 0;
-	new->end = 0;*/
 	new->prev = NULL;
+	new->start = 0;
+	new->end = 0;
 	return (new);
 }
 
@@ -62,8 +63,8 @@ t_llist	*ll_copy_cur(t_llist *cur, char *av)
 	cur->next = new;
 	new->next = NULL;
 	new->prev = temp;
-	/*new->start = 0;
-	new->end = 0;*/
+	new->start = 0;
+	new->end = 0;
 	new->number = ft_atoi(av);
 	return (new);
 }

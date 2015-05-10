@@ -12,28 +12,62 @@
 
 #include "push_swap.h"
 
+void print_a(t_llist *head)
+{
+	t_llist *current;
+	int i;
+
+	i = 0;
+	current = head;
+	printf("\x1b[33mlist a : \x1b[0m");
+	while (current)
+	{
+		i += current->end;
+		current = current->next;
+	}
+	if (!i)
+		return;
+	current = head;
+	while (current)
+	{
+		printf("%d ", current->number);
+		if (current->end)
+			break ;
+		current = current->next;
+	}
+}
+
+void print_b(t_llist *head)
+{
+	t_llist *current;
+
+	current = head;
+	printf("\x1b[31mlist b : \x1b[0m");
+
+	while (current->next)
+		current = current->next;
+	while (current && !current->end)
+	{
+		printf("%d ", current->number);
+		current = current->prev;
+	}
+}
 
 void print_list(t_llist *head)
 {
 	t_llist *current;
 
 	current = head;
-
-	printf("\x1b[33mlist a : \x1b[0m");
-	while (current->start != 1 && current)
+/*
+	while (current)
 	{
-		printf("%d ", current->number);
+		printf("number = %d, start = %d, end = %d\n", current->number, current->start, current->end);
 		current = current->next;
 	}
-	current = head;
-	while (current->next)
-		current = current->next;
-	printf("\n\x1b[31mlist b : \x1b[0m");
-	while (current->start != 1)
-	{
-		printf("%d ", current->number);
-		current = current->prev;
-	}
+	printf("\n");*/
+	print_a(current);
+	printf("\n");
+	print_b(current);
 	printf("\n\n");
 }
 
@@ -45,15 +79,15 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	//print_list(head);
 	//ft_sa(head);
 	//printf("sa.\n");
-	//print_list(head);
+	print_list(head);
+	ft_pb(head);
+	print_list(head);
 	ft_pb(head);
 	print_list(head);
 	ft_pb(head);
 	print_list(head);
-	//ft_pb(head);
-	//print_list(head);
-	/*ft_pb(head);
-	print_list(head);*/
+	ft_pb(head);
+	print_list(head);
 	//print_list(head);
 	//print_list(head);
 
