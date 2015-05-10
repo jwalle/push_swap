@@ -7,7 +7,7 @@ void	ft_sa(t_llist *current)
 	t_llist *swap;
 	int temp;
 
-	if (!current)
+	if (!current || ft_a_empty(current) || ft_a_only_one(current))
 		return ;
 	swap = current;
 	if (!swap || !swap->next)
@@ -79,6 +79,8 @@ void	ft_pa(t_llist *current)
 
 	i = 0;
 	swap = current;
+	if (ft_b_empty(current))
+		return ;
 	while (swap)
 	{
 		i += swap->end;

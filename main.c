@@ -68,7 +68,7 @@ void print_list(t_llist *head)
 	print_a(current);
 	printf("\n");
 	print_b(current);
-	printf("\n\n");
+	printf("\n");
 }
 
 void push_swap(t_llist *head, t_llist *sorted, t_env *e)
@@ -76,19 +76,34 @@ void push_swap(t_llist *head, t_llist *sorted, t_env *e)
 	int chaos;	
 	
 	sorted = ft_sort(&sorted);
+	
+	//printf("list initial : \n");
 	//print_list(head);
+	
 	//ft_sa(head);
 	//printf("sa.\n");
+	//print_list(head);
+	
+	ft_algo(head, sorted, e);
+	printf("liste final : \n");
 	print_list(head);
+	printf("\n");
+	
+	/*ft_pb(head);
+	printf("normal\n");
+	print_list(head);
+	printf("pb\n");
 	ft_pb(head);
-	//print_list(head);
+	print_list(head);
+	printf("pb\n");
 	ft_pb(head);
-	//print_list(head);
-	//ft_pb(head);
+	print_list(head);
+	printf("rb\n");
+	ft_rb(head);
 	print_list(head);
 	ft_rr(head);
 	print_list(head);
-	/*ft_pb(head);
+	ft_pb(head);
 	print_list(head);
 	ft_pb(head);
 	print_list(head);
@@ -133,7 +148,6 @@ int     main(int ac, char **av)
 		ft_init_e(e);
 		head = ll_stock(av + 1);
 		sorted = ll_stock(av + 1);
-		printf("plop\n");
 		push_swap(head,sorted, e);
 	}
     return 0;

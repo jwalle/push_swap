@@ -10,6 +10,34 @@ static int ft_cmp(t_llist *a, t_llist *b)
 	return (0);
 }
 
+int	ft_b_len(t_llist *head)
+{
+	t_llist *current;
+	int		i;
+
+
+	i = 0;
+	current = head;
+	if (ft_b_empty(current))
+		return (0);
+	if (ft_b_only_one(current))
+		return (1);
+	while (current)
+	{
+		if (current->start)
+			break;
+		current = current->next;
+	}
+	while (current->prev)
+	{
+		i++;
+		if (current->prev->end)
+			break;
+		current = current->prev;
+	}
+	return (i);
+}
+
 
 
 int	ft_chaos(t_llist *head, t_llist *sorted, t_env *e)
@@ -22,9 +50,7 @@ int	ft_chaos(t_llist *head, t_llist *sorted, t_env *e)
 	int l;
 	int r;
 
-
-	if (e->i == 0)
-		printf("plop\n");
+	(void)e;
 	ret = 0;
 	current_head = head;
 	current_sort = sorted;
@@ -38,23 +64,21 @@ int	ft_chaos(t_llist *head, t_llist *sorted, t_env *e)
 				(!ft_cmp(current_sort_r, current_head)) && 
 				(current_sort_r || current_sort_l))
 		{
-			//printf("AVANT : l = %d, r = %d, h = %d\n", current_sort_l->number, current_sort_r->number, current_head->number);
 			if (current_sort_r->next)
 				current_sort_r = current_sort_r->next;
 			if (current_sort_l->prev)
 				current_sort_l = current_sort_l->prev;
-			r++;
-			l++;
+			r += 1;
+			l += 1;
 			if (current_sort_r->number == current_head->number)
 				ret += r;
 			if (current_sort_l->number == current_head->number)
 				ret += l;
 		}
-		//printf("APRES : l = %d, r = %d, h = %d\n", current_sort_l->number, current_sort_r->number, current_head->number);
-
 		current_head = current_head->next;
 		current_sort = current_sort->next;
 	}
+	ret += ft_b_len(head);
 	return (ret);
 }
 

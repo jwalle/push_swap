@@ -6,6 +6,7 @@ SRC = 	main.c \
 		swap_one.c \
 		swap_two.c \
 		ft_chaos.c \
+		ft_algo.c \
 
 OBJ			=	$(SRC:.c=.o)
 

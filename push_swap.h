@@ -51,7 +51,12 @@ void	ft_pa(t_llist *current);
 void	ft_ra(t_llist *current);
 void	ft_rb(t_llist *current);
 void 	ft_rr(t_llist *head);
-
-
+void	ft_algo(t_llist *head, t_llist *sorted, t_env *e);
+void 	print_list(t_llist *head);
+int 	ft_a_empty(t_llist *head);
+int		ft_b_empty(t_llist *head);
+int		ft_a_only_one(t_llist *head);
+int 	ft_b_only_one(t_llist *head);
+int		ft_b_len(t_llist *head);
 
 #endif
