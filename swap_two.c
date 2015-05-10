@@ -32,6 +32,43 @@ int		ft_b_empty(t_llist *head)
 	return (0);
 }
 
+int	ft_a_only_one(t_llist *head)
+{
+	t_llist *current;
+	int i;
+
+	i = 0;
+	current = head;
+	while (current)
+	{
+		i++;
+		if (current->end)
+			break ;
+		current = current->next;
+	}
+	if (i == 1)
+		return (1);
+	return (0);
+
+}
+
+int ft_b_only_one(t_llist *head)
+{
+	t_llist *current;
+	int i;
+
+	i = 0;
+	current = head;
+	while (current)
+	{
+		if (current->start && current->end)
+			return (i);
+		i++;
+		current = current->next;
+	}
+	return (0);	
+}
+
 void	ft_ll_swap(t_llist *one, t_llist *two)
 {
 	int temp;
@@ -45,10 +82,10 @@ void	ft_ra(t_llist *head)
 {
 	t_llist *current;
 	int temp_end;
-	//int temp;
 
 	current = head;
-	if (ft_a_empty(current))
+	//printf("one a = %d, one b = %d\n", ft_a_only_one(current), ft_b_only_one(current));
+	if (ft_a_empty(current) || ft_a_only_one(current))
 		return ;
 	while (current)
 	{
@@ -60,9 +97,6 @@ void	ft_ra(t_llist *head)
 	current = current->next;
 	while (current->prev)
 	{
-		/*temp = current->number;
-		current->number = current->prev->number;
-		current->prev->number = temp;*/
 		ft_ll_swap(current, current->prev);
 		if (!current->prev->prev)
 		{
@@ -79,21 +113,34 @@ void 	ft_rb(t_llist *head)
 	int		temp;
 
 	current = head;
-	if (ft_b_empty(current))
+	if (ft_b_empty(current) && ft_b_only_one(current) == 1)
 		return ;
-	while (current->next)
+	while (current->next && !current->end)
 		current = current->next;
 	temp = current->next->number;
 	current = current->next;
-	while (current->prev)
+	while (current->next)
 	{
-		ft_ll_swap(current, current->prev);
-		if (current->prev->start)
+		ft_ll_swap(current, current->next);
+		if (current->next->start)
 		{
-			current->prev->number = temp;
+			current->next->number = temp;
 			break;
 		}
-		current = current->prev;
-	}
+		current = current->next;
+	}	
 
 }
+
+void ft_rr(t_llist *head)
+{
+	t_llist *current;
+
+	current = head;
+
+	ft_ra(current);
+	ft_rb(current);
+}
+
+
+
